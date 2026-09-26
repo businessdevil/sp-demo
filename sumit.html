@@ -475,6 +475,130 @@
             font-size: 0.9rem;
         }
 
+        /* --- TESTIMONIALS CAROUSEL --- */
+        .testimonial-carousel {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .carousel-row {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .carousel-viewport {
+            overflow: hidden;
+            flex: 1;
+            min-width: 0;
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .testimonial-slide {
+            flex: 0 0 100%;
+            display: flex;
+            padding: 0 4px;
+        }
+
+        .testimonial-card {
+            flex: 1;
+            background-color: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 40px 35px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 250px;
+            transition: border-color 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            border-color: var(--accent-color);
+        }
+
+        .testimonial-quote-icon {
+            color: var(--accent-color);
+            font-size: 1.4rem;
+            margin-bottom: 18px;
+            opacity: 0.85;
+        }
+
+        .testimonial-text {
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: 1.05rem;
+            line-height: 1.75;
+            color: var(--text-main);
+            margin-bottom: 22px;
+        }
+
+        .testimonial-name {
+            color: var(--accent-color);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-family: var(--font-sans);
+        }
+
+        .carousel-btn {
+            flex: 0 0 auto;
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            border: 1px solid var(--card-border);
+            background-color: var(--card-bg);
+            color: var(--accent-color);
+            font-size: 0.95rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .carousel-btn:hover {
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+            color: #000;
+        }
+
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 28px;
+        }
+
+        .carousel-dot {
+            width: 8px;
+            height: 8px;
+            padding: 0;
+            border: none;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.22);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .carousel-dot:hover {
+            background-color: var(--text-muted);
+        }
+
+        .carousel-dot.active {
+            width: 24px;
+            border-radius: 4px;
+            background-color: var(--accent-color);
+        }
+
         /* --- BOOKING SECTION --- */
         .booking-section {
             background-color: var(--surface-color);
@@ -653,6 +777,28 @@
             }
             .exp-date {
                 margin-top: 5px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .carousel-row {
+                gap: 10px;
+            }
+
+            .carousel-btn {
+                width: 38px;
+                height: 38px;
+                font-size: 0.8rem;
+            }
+
+            .testimonial-card {
+                padding: 30px 22px;
+                min-height: 280px;
+            }
+
+            .testimonial-text {
+                font-size: 0.95rem;
+                line-height: 1.7;
             }
         }
 
@@ -996,6 +1142,155 @@
         </div>
     </section>
 
+    <!-- TESTIMONIALS SECTION -->
+    <section class="container" id="testimonials">
+        <div style="text-align: center;">
+            <span class="section-subtitle">Kind Words</span>
+            <h2 class="section-title">What people say.</h2>
+            <p class="section-desc" style="margin: 0 auto 30px;">Reflections from clients and colleagues I've had the privilege to work with.</p>
+        </div>
+
+        <div class="testimonial-carousel">
+            <div class="carousel-row">
+                <button class="carousel-btn" onclick="moveTestimonial(-1)" aria-label="Previous testimonial">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+
+                <div class="carousel-viewport">
+                    <div class="carousel-track" id="testimonialTrack">
+
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card">
+                                <div class="testimonial-quote-icon"><i class="fas fa-quote-left"></i></div>
+                                <p class="testimonial-text">A very nice person in and out. His guidance on astrology offers very simple and exact remedies that are easy to follow and truly fruitful. Thank you for your thoughtful words and support through my tough times.</p>
+                                <span class="testimonial-name">Puja Shrestha</span>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card">
+                                <div class="testimonial-quote-icon"><i class="fas fa-quote-left"></i></div>
+                                <p class="testimonial-text">It's always inspiring to connect with professionals who uphold integrity and depth in astrology. Looking forward to contributing together toward more conscious and aligned living for people.</p>
+                                <span class="testimonial-name">Neethu Lithan</span>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card">
+                                <div class="testimonial-quote-icon"><i class="fas fa-quote-left"></i></div>
+                                <p class="testimonial-text">I truly respect him as a senior and a knowledgeable astrologer. His advice was practical and clear, and by following it I was able to achieve important goals in my life. Highly recommended.</p>
+                                <span class="testimonial-name">Ganganath Kawar Yogi</span>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card">
+                                <div class="testimonial-quote-icon"><i class="fas fa-quote-left"></i></div>
+                                <p class="testimonial-text">Their guidance gave me much-needed clarity during a confusing phase of my life. The predictions were explained in a practical and calm manner, and the remedies were simple and easy to follow.</p>
+                                <span class="testimonial-name">Ayushi Chourasiya</span>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card">
+                                <div class="testimonial-quote-icon"><i class="fas fa-quote-left"></i></div>
+                                <p class="testimonial-text">A guiding light on my journey into astrology. What truly stands out is his compassionate approach — how he uses astrology not just as a science, but as a tool for healing and consolation.</p>
+                                <span class="testimonial-name">Suraj Shrestha</span>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card">
+                                <div class="testimonial-quote-icon"><i class="fas fa-quote-left"></i></div>
+                                <p class="testimonial-text">One of the most energetic and hardworking professionals I've encountered. He takes ownership of every task and delivers high-quality results, often exceeding expectations.</p>
+                                <span class="testimonial-name">Govinda Dawadi</span>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card">
+                                <div class="testimonial-quote-icon"><i class="fas fa-quote-left"></i></div>
+                                <p class="testimonial-text">A very professional and promising colleague. His proactive, humble and hardworking approach as a professional always impressed and inspired me.</p>
+                                <span class="testimonial-name">Sudarsan Pathak</span>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card">
+                                <div class="testimonial-quote-icon"><i class="fas fa-quote-left"></i></div>
+                                <p class="testimonial-text">I have known Sumit for the past 4 years. He is passionate about his work, a go-getter and focused on goals. I see so much potential in him and wish him future success.</p>
+                                <span class="testimonial-name">Shyam Bhat</span>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card">
+                                <div class="testimonial-quote-icon"><i class="fas fa-quote-left"></i></div>
+                                <p class="testimonial-text">Smart working guy with great communication skills and great leadership skills. He will turn out to be a great asset for any company.</p>
+                                <span class="testimonial-name">Saroj Patel</span>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card">
+                                <div class="testimonial-quote-icon"><i class="fas fa-quote-left"></i></div>
+                                <p class="testimonial-text">I couldn't have asked for a better colleague. I was constantly amazed not only by his technical management skills, but also by his ability to keep the team motivated.</p>
+                                <span class="testimonial-name">Bhagwati Kumar Bhagat</span>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card">
+                                <div class="testimonial-quote-icon"><i class="fas fa-quote-left"></i></div>
+                                <p class="testimonial-text">One of the most diligent people with lots of knowledge and ideas I have had the pleasure of working with.</p>
+                                <span class="testimonial-name">Chetan Budhathoki</span>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card">
+                                <div class="testimonial-quote-icon"><i class="fas fa-quote-left"></i></div>
+                                <p class="testimonial-text">Always hardworking and passionate, tireless in his role. His enthusiasm for learning new things and acquiring product knowledge is always appreciable.</p>
+                                <span class="testimonial-name">Aashish Ghimire</span>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card">
+                                <div class="testimonial-quote-icon"><i class="fas fa-quote-left"></i></div>
+                                <p class="testimonial-text">A rare combination of technical knowledge and managerial skill — ambitious, but kind-hearted and friendly. An excellent colleague and a real-life friend.</p>
+                                <span class="testimonial-name">Ranjit Mahato</span>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card">
+                                <div class="testimonial-quote-icon"><i class="fas fa-quote-left"></i></div>
+                                <p class="testimonial-text">A very smart man with good communication skills and, overall, a good person.</p>
+                                <span class="testimonial-name">Mazin Ali</span>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card">
+                                <div class="testimonial-quote-icon"><i class="fas fa-quote-left"></i></div>
+                                <p class="testimonial-text">Very motivational to all the young people who want to achieve something in life. A very good team leader who can take his own decisions and help people in need.</p>
+                                <span class="testimonial-name">Shilpa G</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <button class="carousel-btn" onclick="moveTestimonial(1)" aria-label="Next testimonial">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+
+            <div class="carousel-dots" id="carouselDots"></div>
+        </div>
+    </section>
+
     <!-- BOOKING SECTION (Google Calendar Integration) -->
     <section class="booking-section" id="booking">
         <div class="container">
@@ -1084,6 +1379,78 @@
             const navMenuWrapper = document.getElementById('navMenuWrapper');
             navMenuWrapper.classList.toggle('active');
         }
+    </script>
+
+    <!-- JAVASCRIPT FOR TESTIMONIAL CAROUSEL -->
+    <script>
+        var testimonialIndex = 0;
+        var testimonialTimer = null;
+
+        var testimonialTrack = document.getElementById('testimonialTrack');
+        var testimonialSlides = testimonialTrack.querySelectorAll('.testimonial-slide');
+        var testimonialDotsWrap = document.getElementById('carouselDots');
+        var testimonialCarousel = document.querySelector('.testimonial-carousel');
+
+        // Build dots
+        testimonialSlides.forEach(function (_, i) {
+            var dot = document.createElement('button');
+            dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+            dot.setAttribute('aria-label', 'Go to testimonial ' + (i + 1));
+            dot.addEventListener('click', function () {
+                goToTestimonial(i);
+            });
+            testimonialDotsWrap.appendChild(dot);
+        });
+
+        var testimonialDots = testimonialDotsWrap.querySelectorAll('.carousel-dot');
+
+        function renderTestimonial() {
+            testimonialTrack.style.transform = 'translateX(-' + (testimonialIndex * 100) + '%)';
+            testimonialDots.forEach(function (dot, i) {
+                if (i === testimonialIndex) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        }
+
+        function goToTestimonial(i) {
+            testimonialIndex = (i + testimonialSlides.length) % testimonialSlides.length;
+            renderTestimonial();
+            restartTestimonialTimer();
+        }
+
+        function moveTestimonial(dir) {
+            goToTestimonial(testimonialIndex + dir);
+        }
+
+        function restartTestimonialTimer() {
+            if (testimonialTimer) {
+                clearInterval(testimonialTimer);
+            }
+            testimonialTimer = setInterval(function () {
+                testimonialIndex = (testimonialIndex + 1) % testimonialSlides.length;
+                renderTestimonial();
+            }, 7000);
+        }
+
+        // Pause on hover for a calmer reading experience
+        if (testimonialCarousel) {
+            testimonialCarousel.addEventListener('mouseenter', function () {
+                if (testimonialTimer) {
+                    clearInterval(testimonialTimer);
+                    testimonialTimer = null;
+                }
+            });
+            testimonialCarousel.addEventListener('mouseleave', function () {
+                restartTestimonialTimer();
+            });
+        }
+
+        // Initialise
+        renderTestimonial();
+        restartTestimonialTimer();
     </script>
 </body>
 </html>
